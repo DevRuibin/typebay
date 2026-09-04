@@ -1,0 +1,79 @@
+// register signal tracking hook before any signals are created
+import "./dev/signal-tracker";
+
+//enable solidjs-devtools
+import "solid-devtools";
+
+import "./event-handlers/global";
+import "./event-handlers/test";
+
+import { init } from "./firebase";
+import * as Logger from "./utils/logger";
+import * as DB from "./db";
+import "./ui";
+import { Config } from "./config/store";
+import * as TestTimer from "./test/test-timer";
+import * as Result from "./test/result";
+import { onAuthStateChanged } from "./auth";
+import { enable } from "./legacy-states/glarses-mode";
+import "./input/listeners";
+import "./controllers/route-controller";
+import "./elements/no-css";
+import "./legacy-states/connection";
+import "./test/tts";
+import { addToGlobal } from "./utils/misc";
+import * as Focus from "./test/focus";
+import { applyEngineSettings } from "./anim";
+import { qs, qsa, qsr } from "./utils/dom";
+import { mountComponents } from "./components/mount";
+import "./ready";
+import { loadFromLocalStorage } from "./config/lifecycle";
+
+import "./input/hotkeys";
+import { getLang, t } from "./i18n";
+import { getLastEventLog } from "./states/test";
+import { buildEventLog } from "./test/events/data";
+
+// Lock Math.random
+Object.defineProperty(Math, "random", {
+  value: Math.random,
+  writable: false,
+  configurable: false,
+  enumerable: true,
+});
+
+// Freeze Math object
+Object.freeze(Math);
+
+// Lock Math on window
+Object.defineProperty(window, "Math", {
+  value: Math,
+  writable: false,
+  configurable: false,
+  enumerable: true,
+});
+
+document.documentElement.lang = getLang();
+document.title = t("metaTitle");
+applyEngineSettings();
+void loadFromLocalStorage();
+
+Focus.set(true, true);
+void init(onAuthStateChanged);
+
+addToGlobal({
+  snapshot: DB.getSnapshot,
+  config: Config,
+  glarsesMode: enable,
+  enableTimerDebug: TestTimer.enableTimerDebug,
+  getTimerStats: TestTimer.getTimerStats,
+  toggleSmoothedBurst: Result.toggleSmoothedBurst,
+  toggleDebugLogs: Logger.toggleDebugLogs,
+  qs: qs,
+  qsa: qsa,
+  qsr: qsr,
+  lastEventLog: () => getLastEventLog(),
+  currentEventLog: buildEventLog,
+});
+
+mountComponents();

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Security | TypeBay</title>
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="images/favicon/favicon.ico" />
+    <meta name="name" content="TypeBay | Free typing speed test" />
+    <meta
+      name="description"
+      content="Security overview for TypeBay — the free typing speed test that processes everything in your browser."
+    />
+    <meta name="theme-color" content="#4f46e5" />
+    <style>
+      :root {
+        --bg: #f7f8fa;
+        --border: #e3e6eb;
+        --text: #2a2f3a;
+        --muted: #5b6470;
+        --main: #4f46e5;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", "Noto Sans SC", "Noto Sans KR", sans-serif;
+        line-height: 1.6;
+      }
+      .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 2rem 1.25rem 4rem;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid var(--border);
+      }
+      header a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        font-size: 1.4rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+        letter-spacing: -0.02em;
+        color: var(--main);
+      }
+      h2 {
+        font-size: 1.1rem;
+        margin-top: 1.75rem;
+      }
+      p,
+      li {
+        color: var(--text);
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <a href="/">typebay</a>
+        <span class="muted">Security</span>
+      </header>
+      <h1>Security</h1>
+      <p class="muted">Last updated: September 2026</p>
+      <p>
+        TypeBay's security model is simple: there is nothing to steal, because
+        there is no server-side data.
+      </p>
+      <h2>Local-first processing</h2>
+      <p>
+        The typing test, its configuration and its results are processed and
+        stored entirely in your browser. TypeBay has no backend, no database
+        and no accounts, so there is no server-side store of your data to be
+        breached.
+      </p>
+      <h2>Transport</h2>
+      <p>
+        The site is served over HTTPS on Cloudflare's network, protecting the
+        delivery of the application code itself.
+      </p>
+      <h2>Supply chain</h2>
+      <p>
+        TypeBay is built from the open-source
+        <a href="https://github.com/monkeytypegame/monkeytype">Monkeytype</a>
+        project (GPL-3.0) with its account, tracking and advertising systems
+        removed. The full modified source is published under the project's
+        GitHub repository for review.
+      </p>
+      <h2>Reporting a vulnerability</h2>
+      <p>
+        If you believe you have found a security issue, please report it
+        privately through the project's GitHub repository. We appreciate
+        responsible disclosure.
+      </p>
+    </div>
+  </body>
+</html>

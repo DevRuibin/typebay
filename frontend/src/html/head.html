@@ -1,0 +1,124 @@
+<head>
+  <link
+    rel="preload"
+    href="/webfonts/RobotoMono-Regular.woff2"
+    type="font/woff2"
+    as="font"
+    crossorigin
+  />
+  <link
+    rel="preload"
+    href="/webfonts/LexendDeca-Regular.woff2"
+    type="font/woff2"
+    as="font"
+    crossorigin
+  />
+
+  <script>
+    document.addEventListener("keydown", function (e) {
+      if (e.key == "Escape") e.preventDefault();
+    });
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TypeBay | Free typing speed test</title>
+  <!-- fallback theme colors (typebay light) -->
+  <style>
+    :root {
+      --bg-color: #f7f8fa;
+      --main-color: #4f46e5;
+      --caret-color: #4f46e5;
+      --sub-color: #9aa3b2;
+      --sub-alt-color: #e9ebf0;
+      --text-color: #2a2f3a;
+      --error-color: #dc2626;
+      --error-extra-color: #991b1b;
+      --colorful-error-color: #dc2626;
+      --colorful-error-extra-color: #991b1b;
+      --nav-focus-opacity: 0;
+    }
+  </style>
+  <meta name="theme-color" content="#f7f8fa" />
+  <link
+    rel="icon"
+    type="image/x-icon"
+    sizes="32x32"
+    href="/images/favicon/favicon.ico"
+  />
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    sizes="any"
+    href="/images/favicon/favicon.svg"
+  />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/favicon/apple-touch-icon.png"
+  />
+  <link
+    rel="mask-icon"
+    href="/images/favicon/safari-pinned-tab.svg"
+    color="#4f46e5"
+  />
+  <meta name="msapplication-TileColor" content="#4f46e5" />
+  <meta
+    name="msapplication-config"
+    content="/images/favicon/browserconfig.xml"
+  />
+  <meta name="name" content="TypeBay | Free typing speed test" />
+  <meta name="image" content="https://typebay.projectbay.uk/images/mtsocial.png" />
+  <meta
+    name="description"
+    content="Free typing speed test that runs entirely in your browser. Measure your words per minute, accuracy and consistency with time, word and quote tests. No sign-up, no tracking."
+  />
+  <meta
+    name="keywords"
+    content="typing test, typing speed test, wpm test, words per minute, accuracy, typing practice, free typing test, online typing, touch typing"
+  />
+  <meta
+    property="og:title"
+    content="TypeBay | Free typing speed test"
+  />
+  <meta property="og:url" content="https://typebay.projectbay.uk/" />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:image"
+    content="https://typebay.projectbay.uk/images/mtsocial.png"
+  />
+  <meta
+    property="og:description"
+    content="Free typing speed test that runs entirely in your browser. No sign-up, no tracking."
+  />
+  <meta
+    name="twitter:title"
+    content="TypeBay | Free typing speed test"
+  />
+  <meta
+    name="twitter:image"
+    content="https://typebay.projectbay.uk/images/mtsocial.png"
+  />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:description" content="Free typing speed test. No sign-up, no tracking." />
+  <style>
+    /* 
+      Layer order NEEDS to be here and one layer per line.
+      This is because vite changes the order of the css imports,
+      and the layer definition needs to be at the very very top, otherwise things break.
+    */
+    @layer normalize;
+    @layer theme;
+    @layer base;
+    @layer components;
+    @layer properties;
+    @layer vendor;
+    @layer custom-styles;
+    @layer hidden;
+    @layer utilities;
+  </style>
+  <link rel="stylesheet" class="testtesttest" href="styles/index.scss" />
+  <link rel="stylesheet" class="testtest" href="styles/tailwind.css" />
+  <link rel="stylesheet" class="test" href="styles/vendor.scss" />
+
+  <style class="customFont" type="text/css"></style>
+</head>
