@@ -17,7 +17,7 @@ export const [getVersion, setVersion] = createSignal<{
 export const [getThemeIndicator, setThemeIndicator] = createSignal<{
   /**
    * human readable display name, this is not the ThemeName.
-   * e.g. the display is `serika dark` for the ThemeName `serika_dark`
+   * e.g. the display is `typebay light` for the ThemeName `typebay_light`
    */
   text: string;
   isFavorite: boolean;
